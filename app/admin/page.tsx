@@ -45,7 +45,7 @@ export default function AdminPage() {
   const { toast } = useToast()
   const { t } = useLanguage()
 
-  const ADMIN_PASSWORD = "admin123"
+  const ADMIN_PASSWORD = "Mirkomil201125Milano.kafe"
 
   useEffect(() => {
     if (isAuthenticated) {
