@@ -103,8 +103,10 @@ headers: { "Content-Type": "application/json" },
 body: JSON.stringify({ status: "completed" }),
 });
 if (res.ok) {
-setOrders((prev) => prev.map((o) => (o.id === orderId ? { ...o, status: "completed" } : o)));
-toast({ title: t("success"), description: "Buyurtma Yakunlandi" });
+setOrders((prev) =>
+prev.map((o) => (o.id === orderId ? { ...o, status: "completed" } : o))
+);
+toast({ title: t("success"), description: "Buyurtma yakunlandi" });
 }
 } catch (err) {
 toast({ title: t("error"), description: "Xatolik yuz berdi", variant: "destructive" });
@@ -141,7 +143,9 @@ return (
 
 
 Admin Dashboard
+
  Yangilash
+
 
 
 
@@ -155,16 +159,24 @@ Yangi ({pending.length})
 Faol ({active.length})
 Yakunlangan ({completed.length})
 
-  
-  
-  
+
+
+
+
+
+
+
+
+
 
 
 
 
 Foydalanuvchilar ({users.length})
 
-{users.map((u) => {u.name} - {u.email})}
+{users.map((u) => (
+{u.name} - {u.email}
+))}
 
 
 
@@ -184,7 +196,9 @@ return (
 {formatPrice(o.total_amount)}
 
 {showActions && o.status === "pending" && (
-<Button onClick={() => onUpdateStatus(o.id)} disabled={isLoading}>Yakunlash
+<Button onClick={() => onUpdateStatus(o.id)} disabled={isLoading}>
+Yakunlash
+
 )}
 
 ))}
